@@ -1,9 +1,10 @@
-package com.yskcoder.fire.core.datasource;
+package com.yskcoder.fire.config.properties;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
 import java.sql.SQLException;
@@ -12,10 +13,10 @@ import java.sql.SQLException;
 /**
  * @Description: 数据库数据源配置
  * @Description: 说明:这个类包含的是默认配置，如需修改直接在"application.yml"中配置即可
- * @Author:      yushunkun
+ * @Author:      yskcoder
  * @CreateDate:  2018/7/4 10:49
  */
-@Configuration
+@Component
 @ConfigurationProperties(prefix = "spring.datasource")
 public class DruidProperties {
 
@@ -53,9 +54,8 @@ public class DruidProperties {
 
     private String filters = "stat";
 
-    @Bean
-    public DataSource dataSource(){
-        DruidDataSource dataSource = new DruidDataSource();
+
+    public DataSource config(DruidDataSource dataSource){
         dataSource.setUrl(url);
         dataSource.setUsername(username);
         dataSource.setPassword(password);
