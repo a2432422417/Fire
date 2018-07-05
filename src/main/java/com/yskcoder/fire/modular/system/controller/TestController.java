@@ -1,6 +1,7 @@
 package com.yskcoder.fire.modular.system.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * @Auther: yskcoder
@@ -8,6 +9,13 @@ import org.springframework.stereotype.Controller;
  * @Description:Controller测试类
  */
 @Controller
+@RequestMapping("/fire")
 public class TestController {
+
+    @RequestMapping("")
+    public String helloFire(){
+        System.out.println("HelloFire");
+       return "HelloFire";
+    }
 
 }
