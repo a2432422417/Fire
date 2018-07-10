@@ -57,10 +57,12 @@ public class MyBatisPlusGenerator {
         // 包配置
         PackageConfig pc = new PackageConfig();
         pc.setParent(null);
-        pc.setEntity("com.yskcoder.fire.system.model");
-        pc.setMapper("com.yskcoder.fire.system.dao");
-        pc.setXml("com.yskcoder.fire.system.mapper");
-        pc.setController("Test");//
+        pc.setEntity("com.yskcoder.fire.modular.system.model");
+        pc.setMapper("com.yskcoder.fire.modular.system.dao");
+        pc.setXml("com.yskcoder.fire.modular.system.mapper");
+        pc.setService("Test");
+        pc.setServiceImpl("Test");
+        pc.setController("Test");
         mpg.setPackageInfo(pc);
 
         // 执行生成
