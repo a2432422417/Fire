@@ -5,6 +5,7 @@
 
 #2018/7/13 yskcoder
 Fire添加CHANGELOG.md
+Fire添加角色,部门,菜单,角色菜单对应表
 
 #2018/7/12 yskcoder
 Fire添加xss过滤器类
