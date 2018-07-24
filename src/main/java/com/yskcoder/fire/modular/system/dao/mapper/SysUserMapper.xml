@@ -20,5 +20,15 @@
         <result column="createtime" property="createtime" />
         <result column="version" property="version" />
     </resultMap>
+    <sql id="Base_Column">
+        id, avatar, account, password, salt, name, birthday, sex, email, phone,
+        roleid, deptid, status, createtime, version
+    </sql>
+
+    <select id="findUserByAccount" resultType="SysUser">
+        select
+        <include refid="Base_Column" />
+        from sys_user where account = #{account} and status != 3
+    </select>
 
 </mapper>
