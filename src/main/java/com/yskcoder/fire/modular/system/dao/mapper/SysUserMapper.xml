@@ -8,12 +8,17 @@
         <result column="avatar" property="avatar" />
         <result column="account" property="account" />
         <result column="password" property="password" />
+        <result column="salt" property="salt" />
         <result column="name" property="name" />
+        <result column="birthday" property="birthday" />
         <result column="sex" property="sex" />
         <result column="email" property="email" />
         <result column="phone" property="phone" />
+        <result column="roleid" property="roleid" />
+        <result column="deptid" property="deptid" />
         <result column="status" property="status" />
         <result column="createtime" property="createtime" />
+        <result column="version" property="version" />
     </resultMap>
 
 </mapper>

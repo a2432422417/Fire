@@ -15,7 +15,7 @@ import java.io.Serializable;
  * </p>
  *
  * @author yskcoder123
- * @since 2018-07-10
+ * @since 2018-07-24
  */
 @TableName("sys_user")
 public class SysUser extends Model<SysUser> {
@@ -40,9 +40,17 @@ public class SysUser extends Model<SysUser> {
      */
     private String password;
     /**
+     * md5密码盐
+     */
+    private String salt;
+    /**
      * 名字
      */
     private String name;
+    /**
+     * 生日
+     */
+    private Date birthday;
     /**
      * 性别（1：男 2：女）
      */
@@ -56,13 +64,25 @@ public class SysUser extends Model<SysUser> {
      */
     private String phone;
     /**
-     * 状态(1：启用  2：禁用  3：删除）
+     * 角色id
+     */
+    private String roleid;
+    /**
+     * 部门id
+     */
+    private Integer deptid;
+    /**
+     * 状态(1：启用  2：冻结  3：删除）
      */
     private Integer status;
     /**
      * 创建时间
      */
     private Date createtime;
+    /**
+     * 保留字段
+     */
+    private Integer version;
 
 
     public Integer getId() {
@@ -97,12 +117,28 @@ public class SysUser extends Model<SysUser> {
         this.password = password;
     }
 
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
+
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
     }
 
     public Integer getSex() {
@@ -129,6 +165,22 @@ public class SysUser extends Model<SysUser> {
         this.phone = phone;
     }
 
+    public String getRoleid() {
+        return roleid;
+    }
+
+    public void setRoleid(String roleid) {
+        this.roleid = roleid;
+    }
+
+    public Integer getDeptid() {
+        return deptid;
+    }
+
+    public void setDeptid(Integer deptid) {
+        this.deptid = deptid;
+    }
+
     public Integer getStatus() {
         return status;
     }
@@ -145,6 +197,14 @@ public class SysUser extends Model<SysUser> {
         this.createtime = createtime;
     }
 
+    public Integer getVersion() {
+        return version;
+    }
+
+    public void setVersion(Integer version) {
+        this.version = version;
+    }
+
     @Override
     protected Serializable pkVal() {
         return this.id;
@@ -157,12 +217,17 @@ public class SysUser extends Model<SysUser> {
         ", avatar=" + avatar +
         ", account=" + account +
         ", password=" + password +
+        ", salt=" + salt +
         ", name=" + name +
+        ", birthday=" + birthday +
         ", sex=" + sex +
         ", email=" + email +
         ", phone=" + phone +
+        ", roleid=" + roleid +
+        ", deptid=" + deptid +
         ", status=" + status +
         ", createtime=" + createtime +
+        ", version=" + version +
         "}";
     }
 }
