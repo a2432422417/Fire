@@ -2,9 +2,9 @@ package com.yskcoder.fire.core.shiro.service;
 
 import com.yskcoder.fire.core.shiro.ShiroUser;
 import com.yskcoder.fire.core.util.SpringContextHolder;
-import com.yskcoder.fire.modular.system.dao.SysMenuMapper;
-import com.yskcoder.fire.modular.system.dao.SysUserMapper;
-import com.yskcoder.fire.modular.system.model.SysUser;
+import com.yskcoder.fire.modular.system.dao.MenuMapper;
+import com.yskcoder.fire.modular.system.dao.UserMapper;
+import com.yskcoder.fire.modular.system.model.User;
 import org.apache.shiro.authc.SimpleAuthenticationInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.DependsOn;
@@ -16,16 +16,18 @@ import java.util.List;
 /**
  * @Auther: yskcoder
  * @Date: 2018/7/24 12:00
- * @Description:
+ * @Description: shiro用户相关实现类
  */
 @Service
 @DependsOn("springContextHolder")
 @Transactional(readOnly = true)
 public class ShiroServiceImpl implements IShiroService {
+
     @Autowired
-    SysUserMapper sysUserMapper;
+    UserMapper userMapper;
+
     @Autowired
-    SysMenuMapper sysMenuMapper;
+    MenuMapper menuMapper;
 
     /**
      * 静态方式获取IShiroService的Bean
@@ -36,12 +38,12 @@ public class ShiroServiceImpl implements IShiroService {
     }
 
     @Override
-    public SysUser findUserByAccount(String account) {
-        return sysUserMapper.findUserByAccount(account);
+    public User findUserByAccount(String account) {
+        return userMapper.findUserByAccount(account);
     }
 
     @Override
-    public ShiroUser findShiroUserByUser(SysUser user) {
+    public ShiroUser findShiroUserByUser(User user) {
         return null;
     }
 
@@ -56,7 +58,7 @@ public class ShiroServiceImpl implements IShiroService {
     }
 
     @Override
-    public SimpleAuthenticationInfo getAuthInfo(ShiroUser shiroUser, SysUser user, String realmName) {
+    public SimpleAuthenticationInfo getAuthInfo(ShiroUser shiroUser, User user, String realmName) {
         return null;
     }
 

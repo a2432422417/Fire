@@ -15,10 +15,10 @@ import java.io.Serializable;
  * </p>
  *
  * @author yskcoder123
- * @since 2018-07-24
+ * @since 2018-08-06
  */
 @TableName("sys_user")
-public class SysUser extends Model<SysUser> {
+public class User extends Model<User> {
 
     private static final long serialVersionUID = 1L;
 
@@ -212,7 +212,7 @@ public class SysUser extends Model<SysUser> {
 
     @Override
     public String toString() {
-        return "SysUser{" +
+        return "User{" +
         "id=" + id +
         ", avatar=" + avatar +
         ", account=" + account +

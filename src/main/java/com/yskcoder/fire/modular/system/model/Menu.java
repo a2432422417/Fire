@@ -14,10 +14,10 @@ import java.io.Serializable;
  * </p>
  *
  * @author yskcoder123
- * @since 2018-07-24
+ * @since 2018-08-06
  */
 @TableName("sys_menu")
-public class SysMenu extends Model<SysMenu> {
+public class Menu extends Model<Menu> {
 
     private static final long serialVersionUID = 1L;
 
@@ -187,7 +187,7 @@ public class SysMenu extends Model<SysMenu> {
 
     @Override
     public String toString() {
-        return "SysMenu{" +
+        return "Menu{" +
         "id=" + id +
         ", code=" + code +
         ", pcode=" + pcode +

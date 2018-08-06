@@ -10,14 +10,14 @@ import java.io.Serializable;
 
 /**
  * <p>
- * 角色表
+ * 部门表
  * </p>
  *
  * @author yskcoder123
- * @since 2018-07-24
+ * @since 2018-08-06
  */
-@TableName("sys_role")
-public class SysRole extends Model<SysRole> {
+@TableName("sys_dept")
+public class Dept extends Model<Dept> {
 
     private static final long serialVersionUID = 1L;
 
@@ -27,27 +27,31 @@ public class SysRole extends Model<SysRole> {
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
     /**
-     * 序号
+     * 排序
      */
     private Integer num;
     /**
-     * 父角色id
+     * 父部门id
      */
     private Integer pid;
     /**
-     * 角色名称
+     * 父级ids
      */
-    private String name;
+    private String pids;
     /**
-     * 部门名称
+     * 简称
      */
-    private Integer deptid;
+    private String simplename;
+    /**
+     * 全称
+     */
+    private String fullname;
     /**
      * 提示
      */
     private String tips;
     /**
-     * 保留字段(暂时没用）
+     * 版本（乐观锁保留字段）
      */
     private Integer version;
 
@@ -76,20 +80,28 @@ public class SysRole extends Model<SysRole> {
         this.pid = pid;
     }
 
-    public String getName() {
-        return name;
+    public String getPids() {
+        return pids;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setPids(String pids) {
+        this.pids = pids;
     }
 
-    public Integer getDeptid() {
-        return deptid;
+    public String getSimplename() {
+        return simplename;
     }
 
-    public void setDeptid(Integer deptid) {
-        this.deptid = deptid;
+    public void setSimplename(String simplename) {
+        this.simplename = simplename;
+    }
+
+    public String getFullname() {
+        return fullname;
+    }
+
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
     }
 
     public String getTips() {
@@ -115,12 +127,13 @@ public class SysRole extends Model<SysRole> {
 
     @Override
     public String toString() {
-        return "SysRole{" +
+        return "Dept{" +
         "id=" + id +
         ", num=" + num +
         ", pid=" + pid +
-        ", name=" + name +
-        ", deptid=" + deptid +
+        ", pids=" + pids +
+        ", simplename=" + simplename +
+        ", fullname=" + fullname +
         ", tips=" + tips +
         ", version=" + version +
         "}";

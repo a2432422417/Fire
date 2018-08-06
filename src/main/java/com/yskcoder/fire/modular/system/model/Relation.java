@@ -14,10 +14,10 @@ import java.io.Serializable;
  * </p>
  *
  * @author yskcoder123
- * @since 2018-07-24
+ * @since 2018-08-06
  */
 @TableName("sys_relation")
-public class SysRelation extends Model<SysRelation> {
+public class Relation extends Model<Relation> {
 
     private static final long serialVersionUID = 1L;
 
@@ -67,7 +67,7 @@ public class SysRelation extends Model<SysRelation> {
 
     @Override
     public String toString() {
-        return "SysRelation{" +
+        return "Relation{" +
         "id=" + id +
         ", menuid=" + menuid +
         ", roleid=" + roleid +

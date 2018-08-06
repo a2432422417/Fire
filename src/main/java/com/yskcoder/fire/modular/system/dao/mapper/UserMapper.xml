@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.yskcoder.fire.modular.system.dao.SysUserMapper">
+<mapper namespace="com.yskcoder.fire.modular.system.dao.UserMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.yskcoder.fire.modular.system.model.SysUser">
+    <resultMap id="BaseResultMap" type="com.yskcoder.fire.modular.system.model.User">
         <id column="id" property="id" />
         <result column="avatar" property="avatar" />
         <result column="account" property="account" />
@@ -20,15 +20,5 @@
         <result column="createtime" property="createtime" />
         <result column="version" property="version" />
     </resultMap>
-    <sql id="Base_Column">
-        id, avatar, account, password, salt, name, birthday, sex, email, phone,
-        roleid, deptid, status, createtime, version
-    </sql>
-
-    <select id="findUserByAccount" resultType="SysUser">
-        select
-        <include refid="Base_Column" />
-        from sys_user where account = #{account} and status != 3
-    </select>
 
 </mapper>

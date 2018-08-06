@@ -1,6 +1,6 @@
 package com.yskcoder.fire.modular.system.dao;
 
-import com.yskcoder.fire.modular.system.model.SysDept;
+import com.yskcoder.fire.modular.system.model.Dept;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 
 /**
@@ -9,8 +9,8 @@ import com.baomidou.mybatisplus.mapper.BaseMapper;
  * </p>
  *
  * @author yskcoder123
- * @since 2018-07-24
+ * @since 2018-08-06
  */
-public interface SysDeptMapper extends BaseMapper<SysDept> {
+public interface DeptMapper extends BaseMapper<Dept> {
 
 }

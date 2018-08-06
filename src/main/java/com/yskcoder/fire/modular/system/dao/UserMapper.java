@@ -1,6 +1,6 @@
 package com.yskcoder.fire.modular.system.dao;
 
-import com.yskcoder.fire.modular.system.model.SysUser;
+import com.yskcoder.fire.modular.system.model.User;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -10,15 +10,15 @@ import org.apache.ibatis.annotations.Param;
  * </p>
  *
  * @author yskcoder123
- * @since 2018-07-24
+ * @since 2018-08-06
  */
-public interface SysUserMapper extends BaseMapper<SysUser> {
+public interface UserMapper extends BaseMapper<User> {
 
     /**
      * 通过账号获取用户
      * @param account
      * @return
      */
-    SysUser findUserByAccount(@Param("account") String account);
+    User findUserByAccount(@Param("account") String account);
 
 }

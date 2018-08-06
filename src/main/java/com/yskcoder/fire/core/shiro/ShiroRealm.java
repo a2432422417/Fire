@@ -2,7 +2,7 @@ package com.yskcoder.fire.core.shiro;
 
 import com.yskcoder.fire.core.shiro.service.IShiroService;
 import com.yskcoder.fire.core.shiro.service.ShiroServiceImpl;
-import com.yskcoder.fire.modular.system.model.SysUser;
+import com.yskcoder.fire.modular.system.model.User;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authc.credential.CredentialsMatcher;
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
@@ -33,7 +33,7 @@ public class ShiroRealm extends AuthorizingRealm {
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authToken) throws AuthenticationException {
         IShiroService shiroService = ShiroServiceImpl.me();
         UsernamePasswordToken token = (UsernamePasswordToken) authToken;
-        SysUser user = shiroService.findUserByAccount(token.getUsername());
+        User user = shiroService.findUserByAccount(token.getUsername());
         ShiroUser shiroUser = shiroService.findShiroUserByUser(user);
         SimpleAuthenticationInfo info = shiroService.getAuthInfo(shiroUser, user, super.getName());
         return info;

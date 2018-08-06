@@ -1,7 +1,7 @@
 package com.yskcoder.fire.core.shiro.service;
 
 import com.yskcoder.fire.core.shiro.ShiroUser;
-import com.yskcoder.fire.modular.system.model.SysUser;
+import com.yskcoder.fire.modular.system.model.User;
 import org.apache.shiro.authc.SimpleAuthenticationInfo;
 
 import java.util.List;
@@ -18,14 +18,14 @@ public interface IShiroService {
      * @param account
      * @return
      */
-    SysUser findUserByAccount(String account);
+    User findUserByAccount(String account);
 
     /**
      * 根据系统用户获取shiro用户
      * @param user
      * @return
      */
-    ShiroUser findShiroUserByUser(SysUser user);
+    ShiroUser findShiroUserByUser(User user);
 
     /**
      * 根据角色id获取权限列表
@@ -48,5 +48,5 @@ public interface IShiroService {
      * @param realmName
      * @return
      */
-    SimpleAuthenticationInfo getAuthInfo(ShiroUser shiroUser, SysUser user, String realmName);
+    SimpleAuthenticationInfo getAuthInfo(ShiroUser shiroUser, User user, String realmName);
 }

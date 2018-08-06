@@ -10,14 +10,14 @@ import java.io.Serializable;
 
 /**
  * <p>
- * 部门表
+ * 角色表
  * </p>
  *
  * @author yskcoder123
- * @since 2018-07-24
+ * @since 2018-08-06
  */
-@TableName("sys_dept")
-public class SysDept extends Model<SysDept> {
+@TableName("sys_role")
+public class Role extends Model<Role> {
 
     private static final long serialVersionUID = 1L;
 
@@ -27,31 +27,27 @@ public class SysDept extends Model<SysDept> {
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
     /**
-     * 排序
+     * 序号
      */
     private Integer num;
     /**
-     * 父部门id
+     * 父角色id
      */
     private Integer pid;
     /**
-     * 父级ids
+     * 角色名称
      */
-    private String pids;
+    private String name;
     /**
-     * 简称
+     * 部门名称
      */
-    private String simplename;
-    /**
-     * 全称
-     */
-    private String fullname;
+    private Integer deptid;
     /**
      * 提示
      */
     private String tips;
     /**
-     * 版本（乐观锁保留字段）
+     * 保留字段(暂时没用）
      */
     private Integer version;
 
@@ -80,28 +76,20 @@ public class SysDept extends Model<SysDept> {
         this.pid = pid;
     }
 
-    public String getPids() {
-        return pids;
+    public String getName() {
+        return name;
     }
 
-    public void setPids(String pids) {
-        this.pids = pids;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getSimplename() {
-        return simplename;
+    public Integer getDeptid() {
+        return deptid;
     }
 
-    public void setSimplename(String simplename) {
-        this.simplename = simplename;
-    }
-
-    public String getFullname() {
-        return fullname;
-    }
-
-    public void setFullname(String fullname) {
-        this.fullname = fullname;
+    public void setDeptid(Integer deptid) {
+        this.deptid = deptid;
     }
 
     public String getTips() {
@@ -127,13 +115,12 @@ public class SysDept extends Model<SysDept> {
 
     @Override
     public String toString() {
-        return "SysDept{" +
+        return "Role{" +
         "id=" + id +
         ", num=" + num +
         ", pid=" + pid +
-        ", pids=" + pids +
-        ", simplename=" + simplename +
-        ", fullname=" + fullname +
+        ", name=" + name +
+        ", deptid=" + deptid +
         ", tips=" + tips +
         ", version=" + version +
         "}";

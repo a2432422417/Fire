@@ -1,7 +1,7 @@
 package com.yskcoder.fire.modular.system.controller;
 
-import com.yskcoder.fire.modular.system.model.SysUser;
-import com.yskcoder.fire.modular.system.service.ISysUserService;
+import com.yskcoder.fire.modular.system.model.User;
+import com.yskcoder.fire.modular.system.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,11 +15,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/fire")
 public class TestController {
     @Autowired
-    ISysUserService sysUserService;
+    IUserService sysUserService;
 
     @RequestMapping("")
     public String helloFire(){
-        SysUser sysUser = new SysUser();
+        User sysUser = new User();
         sysUser.setAccount("admin");
         sysUser.setName("小明");
         sysUserService.insertOrUpdate(sysUser);

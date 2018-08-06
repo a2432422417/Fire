@@ -1,6 +1,6 @@
 package com.yskcoder.fire.modular.system.dao;
 
-import com.yskcoder.fire.modular.system.model.SysMenu;
+import com.yskcoder.fire.modular.system.model.Menu;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 
 /**
@@ -9,8 +9,8 @@ import com.baomidou.mybatisplus.mapper.BaseMapper;
  * </p>
  *
  * @author yskcoder123
- * @since 2018-07-24
+ * @since 2018-08-06
  */
-public interface SysMenuMapper extends BaseMapper<SysMenu> {
+public interface MenuMapper extends BaseMapper<Menu> {
 
 }
