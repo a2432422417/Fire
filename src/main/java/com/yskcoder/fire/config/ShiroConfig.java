@@ -7,4 +7,5 @@ package com.yskcoder.fire.config;
  */
 public class ShiroConfig {
 
+
 }

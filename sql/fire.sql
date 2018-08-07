@@ -27,7 +27,7 @@ CREATE TABLE `sys_dept` (
   `simplename` varchar(45) DEFAULT NULL COMMENT '简称',
   `fullname` varchar(255) DEFAULT NULL COMMENT '全称',
   `tips` varchar(255) DEFAULT NULL COMMENT '提示',
-  `version` int(11) DEFAULT NULL COMMENT '版本（乐观锁保留字段）',
+  `version` int(11) DEFAULT NULL COMMENT '保留字段',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='部门表';
 
@@ -74,7 +74,7 @@ CREATE TABLE `sys_role` (
   `name` varchar(255) DEFAULT NULL COMMENT '角色名称',
   `deptid` int(11) DEFAULT NULL COMMENT '部门名称',
   `tips` varchar(255) DEFAULT NULL COMMENT '提示',
-  `version` int(11) DEFAULT NULL COMMENT '保留字段(暂时没用）',
+  `version` int(11) DEFAULT NULL COMMENT '保留字段',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='角色表';
 

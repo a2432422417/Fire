@@ -32,7 +32,7 @@ public interface IShiroService {
      * @param roleId
      * @return
      */
-    List<String> findPermissionsByRoleId(Integer roleId);
+    List<String> findUrlListByRoleId(Integer roleId);
 
     /**
      * 根据角色id获取角色名称
@@ -48,5 +48,5 @@ public interface IShiroService {
      * @param realmName
      * @return
      */
-    SimpleAuthenticationInfo getAuthInfo(ShiroUser shiroUser, User user, String realmName);
+    SimpleAuthenticationInfo getShiroAuthInfo(ShiroUser shiroUser, User user, String realmName);
 }

@@ -18,8 +18,7 @@ public class ShiroUser implements Serializable {
     public Integer deptId;      // 部门id
     public List<Integer> roleList; // 角色集
     public String deptName;        // 部门名称
-    public List<String> roleNames; // 角色名称集
-
+    public String roleNames;       // 角色名称合集
 
     public Integer getId() {
         return id;
@@ -69,12 +68,11 @@ public class ShiroUser implements Serializable {
         this.deptName = deptName;
     }
 
-    public List<String> getRoleNames() {
+    public String getRoleNames() {
         return roleNames;
     }
 
-    public void setRoleNames(List<String> roleNames) {
+    public void setRoleNames(String roleNames) {
         this.roleNames = roleNames;
     }
-
 }

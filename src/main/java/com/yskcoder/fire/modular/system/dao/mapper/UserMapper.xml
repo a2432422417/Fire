@@ -21,4 +21,17 @@
         <result column="version" property="version" />
     </resultMap>
 
+    <sql id="Base_Column_List">
+        id, account, name, birthday,password, sex, email, avatar,
+        phone, roleid,salt,
+        deptid, status,
+        createtime, version
+    </sql>
+
+    <select id="getByAccount" resultType="user">
+        select
+        <include refid="Base_Column_List" />
+        from sys_user where account = #{account} and status != 3
+    </select>
+
 </mapper>

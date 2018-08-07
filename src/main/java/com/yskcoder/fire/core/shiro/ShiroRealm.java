@@ -35,7 +35,7 @@ public class ShiroRealm extends AuthorizingRealm {
         UsernamePasswordToken token = (UsernamePasswordToken) authToken;
         User user = shiroService.findUserByAccount(token.getUsername());
         ShiroUser shiroUser = shiroService.findShiroUserByUser(user);
-        SimpleAuthenticationInfo info = shiroService.getAuthInfo(shiroUser, user, super.getName());
+        SimpleAuthenticationInfo info = shiroService.getShiroAuthInfo(shiroUser, user, super.getName());
         return info;
     }
 
@@ -50,16 +50,16 @@ public class ShiroRealm extends AuthorizingRealm {
         ShiroUser shiroUser = (ShiroUser) principals.getPrimaryPrincipal();
         List<Integer> roleList = shiroUser.getRoleList();
         //路径权限
-        Set<String> permissionSet = new HashSet<>();
+        Set<String> urlSet = new HashSet<>();
         //角色权限
         Set<String> roleNameSet = new HashSet<>();
 
         for (Integer roleId : roleList) {
-            List<String> permissions = shiroService.findPermissionsByRoleId(roleId);
-            if (permissions != null) {
-                for (String permission : permissions) {
-                    if (permission != null && permission.length() > 0 ) {
-                        permissionSet.add(permission);
+            List<String> urlList = shiroService.findUrlListByRoleId(roleId);
+            if (urlList != null) {
+                for (String url : urlList) {
+                    if (url != null && url.length() > 0 ) {
+                        urlSet.add(url);
                     }
                 }
             }
@@ -68,7 +68,7 @@ public class ShiroRealm extends AuthorizingRealm {
         }
 
         SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
-        info.addStringPermissions(permissionSet);
+        info.addStringPermissions(urlSet);
         info.addRoles(roleNameSet);
         return info;
     }
